@@ -1,0 +1,216 @@
+/* Side bar color and settings */
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 35vw;               /* Width based on a percentage of the viewport width */
+    max-width: 310px;          /* Maximum width to ensure it doesn't get too large */
+}
+
+.left-sidebar {
+    left: 0;
+    background-color: rgb(254, 70, 70); /* Background color for the left sidebar */
+}
+
+.right-sidebar {
+    right: 0;
+    background-color: rgb(252, 90, 75); /* Background color for the right sidebar */
+}
+
+/* Promotion boxes animation and properties */
+
+@keyframes flash {
+    0%, 100% {
+        background-color: rgb(255, 255, 255); /* Initial and final color */
+    }
+    50% {
+        background-color: rgb(255, 255, 81); /* Flash color */
+    }
+    25% {
+        background-color: rgb(255, 70, 70);
+    }
+    75% {
+        background-color: orange;
+    }
+}
+
+.box {  
+    width: 20vw;               /* Width based on a percentage of the viewport width */
+    min-width: 20px;          /* Minimum width to ensure it doesn't get too small */
+    max-width: 200px;          /* Maximum width to ensure it doesn't get too large */
+    word-wrap: break-word;     /* Ensure long words break and wrap within the box */
+    overflow: hidden;          /* Hide any overflow content */
+    border: 2px solid black; /* Border of the box */
+    padding: 20px;           /* Padding inside the box */
+    margin: 10px;            /* Margin outside the box */
+    text-align: center;      /* Center text inside the box */
+    animation: flash 1.5s infinite;  /* Apply the flash animation */
+    border-radius: 30px;           /* Rounded corners */
+    position: fixed;
+    display: flex; 
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Position for the left box */
+.left-box {
+    left: 20px;                 /* Position from the left edge */
+}
+
+/* Position for the right box */
+.right-box {
+    right: 20px;                /* Position from the right edge */
+}
+
+.box p {
+    font-weight: bolder;
+    font-size: 40px;
+    margin: 0;    
+}
+
+
+/* Style for the content area */
+.content {
+    margin: 0 auto;             /* Center the content horizontally */
+    /* padding: 20px;              Padding inside the content area */
+    max-width: calc(100% - 600px); /* Ensure content doesn't overlap boxes (200px box width + 20px margin * 2) */
+    display: flex;              /* Use Flexbox */
+    flex-direction: column;     /* Arrange content in a column */
+    align-items: center;        /* Center items horizontally */
+    justify-content: center;
+    text-align: center;
+}
+
+
+.bold {
+    font-weight: bolder;
+    font-size: 4.5vw;
+    text-decoration: underline;
+}
+
+
+/* Image and flashing text */
+
+.GTRimage {
+    max-width: 100%;             /* Make image responsive */
+    height: auto;               /* Maintain aspect ratio */
+    margin-bottom: 20px;        /* Space below the image */
+    display: block;
+    object-fit: contain;
+}
+
+.imgContainer {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    max-width: 800px;
+}
+
+.flashing-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 5vw;
+    color: rgb(221, 255, 0);
+    font-weight: bold;
+    text-align: center;
+    animation: flashtext 0.3s infinite;
+    white-space: nowrap; /* Prevents text from wrapping */
+    max-width: 100%;
+    overflow: hidden; /* Ensures text does not overflow container */
+}
+
+@keyframes flashtext {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* Selling it Text, multiple shadows */
+.sellingText{
+    font-weight: bolder;
+    font-size: 9vw;
+    color: #000;
+    text-shadow:
+    0 20px 0 #e4e4e4,   /* First shadow */
+    0 30px 0 #ccc,   /* Second shadow */
+    0 40px 0 #aaa,   /* Third shadow */
+    0 50px 0 #888,   /* Fourth shadow */
+    0 60px 0 #666;   /* Fifth shadow */
+}
+
+/* Shocked image properties and grid */
+
+.shockedContainer {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr); /* Adjust minmax value as needed */
+    gap: 0px; /* Space between images */
+    width: 90%; /* Adjust the container width */
+    margin: 10px auto 20px 7%;
+}
+
+.shockedImage {
+    width:40%;
+    height: auto;
+    object-fit: contain;
+}
+
+
+/* The warning text */
+.warningText{
+    font-size: 1.5vw;
+    line-height: 6vh;
+    margin-bottom: 7vh;
+}
+
+
+
+/* Form stuff */
+.formIntro{
+    font-size: 1.3vw;
+    font-weight: bold;
+}
+
+.form-container {
+    max-width: 800px;
+    width: 40vw;
+    margin: auto;
+    padding: 30px;
+    border: 10px solid #5f0000;
+    border-radius: 10px;
+    background-color: #a7ff74;
+}
+.form-container label {
+    font-size: 18px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.form-container input,
+.form-container select,
+.form-container textarea {
+    width: 100%;
+    padding: 15px;
+    font-size: 18px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.form-container button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px;
+    font-size: 18px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.form-container button:hover {
+    background-color: #45a049;
+}

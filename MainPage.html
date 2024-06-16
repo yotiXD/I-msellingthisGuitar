@@ -1,0 +1,88 @@
+<html lang="he">
+    
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <title>I'm selling this guitar!</title>
+</head>
+
+<body>
+    <div class="sidebar left-sidebar"></div>
+    <div class="sidebar right-sidebar"></div>
+    <div class="box left-box">
+        <p>This guitar can be yours!!!</p>
+    </div>
+    <div class="box right-box" >
+        <p>This guitar can be yours!!!</p>
+    </div>
+    <div class="content">
+        <p>
+            <span class="bold">Do you see this guitar?</span>
+        </p>
+        <div class="imgContainer">
+            <img src="Images/_DSF1346.JPG" alt="A picture of the guitar I'm selling" class="GTRimage">
+            <div class="flashing-text">This one!!!</div>
+        </div>
+        <!-- only other way to duplicate the image is with Javascript -->
+        <div class="shockedContainer">
+            <img src="Images/flat,1000x1000,075,f-4261572512.jpg" alt="Shocked from guitar" class="shockedImage">
+            <img src="Images/flat,1000x1000,075,f-4261572512.jpg" alt="Shocked from guitar" class="shockedImage">
+            <img src="Images/flat,1000x1000,075,f-4261572512.jpg" alt="Shocked from guitar" class="shockedImage">
+            <img src="Images/flat,1000x1000,075,f-4261572512.jpg" alt="Shocked from guitar" class="shockedImage">
+            <img src="Images/flat,1000x1000,075,f-4261572512.jpg" alt="Shocked from guitar" class="shockedImage">
+            <img src="Images/flat,1000x1000,075,f-4261572512.jpg" alt="Shocked from guitar" class="shockedImage">
+            <img src="Images/flat,1000x1000,075,f-4261572512.jpg" alt="Shocked from guitar" class="shockedImage">
+            <img src="Images/flat,1000x1000,075,f-4261572512.jpg" alt="Shocked from guitar" class="shockedImage">
+            <img src="Images/flat,1000x1000,075,f-4261572512.jpg" alt="Shocked from guitar" class="shockedImage">
+            <img src="Images/flat,1000x1000,075,f-4261572512.jpg" alt="Shocked from guitar" class="shockedImage">
+        </div>
+        <p>
+            <span class="sellingText">I'm selling it!</span>
+        </p><br><br><br>
+        <p class="warningText">
+            I'm not kidding. This is not some sort of a "joke" "website".<br>
+            This is not something you can, <span style="font-weight: bold;">or want,</span> to understand.<br>
+            When I tell you to buy the guitar - you buy the guitar.<br>
+            <span style="letter-spacing: 2.4vw;">Simple.</span>
+        </p>
+        <img src="Images/handsome-young-man-gesturing-thumbs-up-isolated-3184605772.jpg" alt="handsome-young-man-gesturing-thumbs-up-isolated-3184605772" width="90%" style="margin-bottom: 100px;">
+        <p class="formIntro">To have a real chance of going home with this magnificent Guitar, you need to fill out my form:</p><br><br>
+        <div class="form-container" id="form-container">
+            <!-- The form will be loaded here -->
+        </div>
+
+        <p class="bold">You did it chris.</p>
+        <p>This right here Guitar might be yours one day.</p><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <p>It won't. I already sold it.</p>
+    </div>
+
+    <script>
+    // Function to load the form from the external file
+    function loadForm() {
+        fetch('form.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('form-container').innerHTML = data;
+                setUpBlurEvent();
+            })
+            .catch(error => console.error('Error loading the form:', error));
+    }
+
+    // Function to set up the blur event listener for the name input field
+    function setUpBlurEvent() {
+        const nameInput = document.getElementById('name');
+
+        if (nameInput) {
+            nameInput.addEventListener('blur', () => {
+                nameInput.value = 'Chris'; // Set the desired value here
+            });
+        } else {
+            console.error('Name input field not found');
+        }
+    }
+
+    // Load the form when the page loads
+    window.onload = loadForm;
+    </script>
+</body>
+
+</html>
